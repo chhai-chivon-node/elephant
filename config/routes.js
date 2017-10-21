@@ -5,9 +5,11 @@ module.exports.routes = {
   'get /signup': { view: 'user/signup' },
   '/welcome': { view: 'user/welcome' },
 
-  '/': {
-    view: 'index'
-  },
+  // '/': {
+  //   view: 'index'
+  // },
+  
+  '/': 'PagesController.index',
 
   // '/login':{
   //   view:'pages/login'
