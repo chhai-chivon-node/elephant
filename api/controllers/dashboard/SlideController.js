@@ -23,15 +23,14 @@ module.exports = {
         var image = req.file('image');
 	    image.upload({ dirname: '../../assets/images/slide'},function onUploadComplete (err, files) {				
             if (err) return res.serverError(err);								
-                console.log(files);
-                // save original file name
-                var filename = image._files[0].stream.filename;
+                var imageFile  = files[0].fd;
+                var lastPart = imageFile.split("/").pop();
                 var name = req.body.name;
                 var description = req.body.description;
                 var slide = {
                     name: name,
                     description:description,
-                    image:filename
+                    image:lastPart
                 }
                 Slide.create(slide).exec(function(err){
                     if(err){

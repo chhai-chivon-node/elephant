@@ -43,29 +43,31 @@ module.exports = {
     },
 
     create:function(req, res){
-        var image = req.file('image');
-	    image.upload({ dirname: '../../assets/images/catagory'},function onUploadComplete (err, files) {				
-            if (err) return res.serverError(err);								
-                console.log(files);
-                // save original file name
-                var filename = image._files[0].stream.filename;
-                var name = req.body.name;
-                var description = req.body.description;
-                var parentId = req.body.parentId;
-                var category = {
-                    name: name,
-                    parentId:parentId,
-                    description:description,
-                    image:filename
+        var uploadFile = req.file('fileUpload');
+        uploadFile.upload({ dirname: '../../assets/images/category' }, function onUploadComplete(err, files) {
+            // Earlier it was ./assets/images .. Changed to ../../assets/images
+            //	Files will be uploaded to ./assets/images
+            // Access it via localhost:1337/images/file-name
+            if (err) return res.serverError(err);
+            //	IF ERROR Return and send 500 error
+            var imageFile  = files[0].fd;
+            var lastPart = imageFile.split("/").pop();
+            var name = req.body.name;
+            var description = req.body.description;
+            var parentId = req.body.parentId;
+            var category = {
+                name: name,
+                parentId:parentId,
+                description:description,
+                image:lastPart
+            }
+            Category.create(category).exec(function(err){
+                if(err){
+                    res.send(500, {error: 'Database Error'});
                 }
-                Category.create(category).exec(function(err){
-                    if(err){
-                        res.send(500, {error: 'Database Error'});
-                    }
-                    res.redirect('/dashboard/category');
-                });
+                res.redirect('/dashboard/category');
+            });
         });
-        
     },
 
     delete: function(req, res){

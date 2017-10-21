@@ -25,12 +25,12 @@ module.exports = {
     },
 
     create:function(req, res){
-        var image = req.file('image');
-	    image.upload({ dirname: '../../assets/images/product'},function onUploadComplete (err, files) {				
+        var fileUpload = req.file('fileUpload');
+	    fileUpload.upload({ dirname: '../../assets/images/product'},function onUploadComplete (err, files) {				
             if (err) return res.serverError(err);								
-                console.log(files);
+                var imageFile  = files[0].fd;
+                var lastPart = imageFile.split("/").pop();
                 // save original file name
-                var filename = image._files[0].stream.filename;
                 var name = req.body.name;
                 var description = req.body.description;
                 var categoryId = req.body.categoryId;
@@ -38,7 +38,7 @@ module.exports = {
                     name: name,
                     categoryId:categoryId,
                     description:description,
-                    image:filename
+                    image:lastPart
                 }
                 Product.create(product).exec(function(err){
                     if(err){

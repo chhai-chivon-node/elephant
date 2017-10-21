@@ -6,21 +6,20 @@
     
                         <!-- catagory for slides -->
                         <div class="carousel-inner" role="listbox">
-    
                             <div class="item active">
-                                
-                                <div class="col-xs-2 col-sm-2 col-md-2" categories ng-repeat="category in categories">
-                                <a href="/">
-                                <img src="/images/catagory/fresh_product.png">
-                                <div class="slide-catagory-title">
-                                    {{category.name}}
-                                </div>
-                                </a>
-                                </div>
-    
+                                <% categories.forEach(function(category,index){ %>
+                                    <div class="col-xs-2 col-sm-2 col-md-2">
+                                        <a href="/">
+                                            <img src="images/category/<%= category.image %>"/>
+                                            <div class="slide-catagory-title">
+                                                <%= category.name %>
+                                            </div>
+                                        </a>
+                                    </div>
+                                <% }) %>
                             </div>
     
-                            <div class="item">
+                            <!-- <div class="item">
                                 <div class="col-xs-2 col-sm-2 col-md-2">
                                 <a href="catagory/fresh-product.html">
                                 <img src="/images/catagory/fresh_product.png">
@@ -75,7 +74,7 @@
                                 </a>
                                 </div>
     
-                            </div>
+                            </div> -->
                 
                         </div>
     

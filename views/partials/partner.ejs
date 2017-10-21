@@ -13,19 +13,18 @@
     
                     <!-- slide our partner -->
                     <div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
-    
                         <!-- our partner for slides -->
                         <div class="carousel-inner" role="listbox">
-    
+                            <% partners.forEach(function(partner,index){ %>
                             <div class="item active">
-    
-                                <div class="col-xs-2 col-sm-2 col-md-2" partners ng-repeat="partner in partners">
+                                <div class="col-xs-2 col-sm-2 col-md-2">
                                     <a href="#">
-                                    <img src="/images/our_partner/cleanbodia-130x100.png">
+                                    <img src="images/partner/<%= partner.image %>"/>
                                     </a>
-                                    <p>{{partner.name}}</p>
+                                    <p><%= partner.name %></p>
                                 </div>
                             </div>
+                            <% }) %>
                         </div>
                     
                     </div> 
