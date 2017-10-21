@@ -1,0 +1,188 @@
+    <!-- BOOTSTRAP -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+      input[type=text], input[type=password] {
+          padding: 20px 10px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          box-sizing: border-box;
+      }
+      input[type=submit]{
+        margin: 0px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      form{
+        border: 2px #424324;
+        padding: 2px;
+       
+      }
+      .wrap{
+        background-color: red;
+        border: 10px black;
+        border-radius: 20px;
+      }
+    </style>
+
+  <!-- 	header -->
+  <header>
+        <!-- Navbar -->
+          <nav class="navbar navbar-default navbar-fixed-top navbar-bg-dark-green">
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <!--
+                  <button type="button" class="navbar-toggle collapsed pull-right" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                -->
+                </div>
+        
+                <!-- menu header -->
+                <% include ../partials/header %>
+                <!-- /menu header -->
+          </div>
+          <!-- /.container-fluid -->
+        </nav>
+    </header>
+    <!-- 	/header -->
+      
+      <!-- logo -->
+      <% include ../partials/logo %>
+      <!-- /logo -->
+      
+      <!-- search -->
+      <% include ../partials/search %>
+      <!-- /search -->
+      
+      <!-- 	register -->
+	<section id="register-panel">
+      <div class="container">
+      <div class="border-top"></div>
+        <!-- Return Customer  -->
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+            <div class="return-costomer-register">
+            <h3>Register Account</h3>
+            <h5>If you already have an account with us, please login at the <a href="/login">login page.</a></h5>
+            <!-- facebook login -->
+            <i class="fa fa-facebook"></i> 
+            <button type="button" class="btn btn-primary btn-block active btn-facebook">Login with Facebbok</button>
+            <!-- /facebook login -->
+            <h2>OR</h2>
+            <!-- 	form login -->
+            <div class="form-register">
+            <form method="post" action="/signup">
+                <div class="form-header">
+                    <div class="title">Your Personal Details</div>
+                    <div class="border-buttom"></div>
+                </div>                                  
+                <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <label for="username"><span class="require">*</span>Username</label>
+                    <input name="name" id="username" type="text" class="form-control" placeholder="Enter username"/>
+                </div>                                    
+                <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <label for="email"><span class="require">*</span>Email</label>
+                    <input name="email"  id="email" class="form-control" type="text" placeholder="Enter email"/>
+                </div>                  
+                <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <label for="passowrd">Password</label>
+                    <input name="password" id="password"  class="form-control" type="password" placeholder="***************"/>
+                </div>                                     
+                <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <label for="confirm-passowrd">Confirm Password</label>
+                        <input name="password" id="confirm-password"  class="form-control" type="password" placeholder="***************"/>
+                </div>                 
+                <div class="form-group col-xs-12 col-sm-12">
+                        <label for="phone"><span class="require">*</span>YOUR PHONE NUMBER</label>
+                        <input type="text" class="form-control" id="phone" placeholder="010888***" ng-model="phoneNumber"> 
+                </div>                       
+                <div class="form-group col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                        Yes <input type="checkbox" checked="checked"> No
+                </div>
+                <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="checkbox">
+                      I have read and agree to the <a href="#">Privacy Policy</a><input type="checkbox">
+                    </div>
+                </div>                                   
+                <input type="submit"  class="btn btn-success btn-block btn-new-register" value="Continue"/>               
+            </form>
+        </div>
+        <!-- form login -->
+    </div>
+</div>
+<!-- /Return Customer -->
+
+<!-- Benifit Regitser -->
+<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+  <div class="benifit-sign-up">
+      <div class="point"><span class="glyphicon glyphicon-triangle-left"></span></div>
+      <h3>Benefits of Signing Up</h3>
+      <h5>mart87.com gets you best search results based on your past purchases</h5>
+        
+        <ul>
+          <li>Access all your past purchases under a single view along with dates and amounts to easily go back in time and re-order</li>
+
+          <li>Earn credit/saving points every time you shop and even pay or round off your totals using your mart87 point</li>
+
+          <li>Save frequently bought items into lists and enjoy a faster shopping experience</li>
+
+            <li>mart87.com remembers your addresses, preferred time slots and payment methods speeding up your checkout process</li>
+
+
+        </ul>
+
+
+      </div>
+</div>
+<!-- /New Member -->
+</div>
+</section>
+
+<!-- /register -->
+
+
+<!-- chat -->
+<% include ../partials/chat %>
+<!-- /chat -->
+
+<!-- Footer -->
+<footer>
+<!-- footer top -->
+<section id="footer_top">
+        <div class="container">
+            <div class="row">
+            
+                <!-- contact -->
+                <% include ../partials/contact %>
+                <!-- /contact -->
+
+                <!-- shared -->
+                <% include ../partials/shared %>
+                <!-- /shared -->
+                
+                <!-- how to buy -->
+                <% include ../partials/how-to-buy %>
+                <!-- how to buy -->
+            </div>
+        </div>
+</section>
+<!-- /footer top -->		
+
+<!-- footer buttom -->
+<section id="footer_buttom">
+    <% include ../partials/footer %>
+</section>
+<!-- /footer buttom -->
+</footer>
+<!-- /Footer -->

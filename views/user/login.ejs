@@ -1,0 +1,161 @@
+    <!-- BOOTSTRAP -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+      input[type=email], input[type=password] {
+          padding: 20px 10px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          box-sizing: border-box;
+      }
+      input[type=submit]{
+        margin: 0px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      form{
+        border: 2px #424324;
+        padding: 2px;
+       
+      }
+      .wrap{
+        background-color: red;
+        border: 10px black;
+        border-radius: 20px;
+      }
+    </style>
+    <!-- END BOOTSTRAP -->
+
+      <!-- 	header -->
+  <header>
+      <!-- Navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top navbar-bg-dark-green">
+            <div class="container-fluid">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed pull-right" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+      
+              <!-- menu header -->
+              <% include ../partials/header %>
+              <!-- /menu header -->
+        </div>
+        <!-- /.container-fluid -->
+      </nav>
+  </header>
+  <!-- 	/header -->
+    
+    <!-- logo -->
+    <% include ../partials/logo %>
+    <!-- /logo -->
+    
+    <!-- search -->
+    <% include ../partials/search %>
+    <!-- /search -->
+  
+   <!-- 	Login -->
+	<section id="login-panel">
+    <div class="container">
+      <div class="border-top"></div>
+        <!-- Return Customer  -->
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="return-costomer-login">
+              <h3>Returning Customer</h3>
+                <h5>I am a returning customer</h5>
+                  <!-- facebook login -->
+                    <i class="fa fa-facebook"></i> 
+                      <button type="button" class="btn btn-primary btn-block active btn-facebook">Login with Facebbok</button>
+                    <!-- /facebook login -->
+                      <h2>OR</h2>
+                      <!-- 	form login -->
+                      <div class="form-login">
+                        <form action="/login" class="form-horizontal" method="post">
+                            
+                          <div class="form-group">
+                              <label for="email">Email address</label>
+                              <input type="email" class="form-control" id="email" name="email" placeholder="Email address">
+                            </div>
+
+                            <div class="form-group">
+                              <label for="password">Password</label>
+                              <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                            </div>
+
+                            <div class="form-group">
+                                  <a href="/forget-password">Forgotten Password</a>
+                            </div>
+                            <input type="submit" class="btn btn-success btn-block btn-return-login" value="Login"/>
+                        </form>
+                      </div>
+                     <!-- 	form login -->
+                    </div>
+              </div>
+              <!-- /Return Customer -->
+              <!-- New Member -->
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                  <div class="new-costomer-login">
+                          <h3>New Customer</h3>
+                          <h5>Register Account</h5>
+                          <p>
+                              By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.
+                          </p>
+
+                          <!-- Register button -->
+                              <a href="/register" class="btn btn-success btn-new-register">Create New Account</a>
+                          <!-- /Register button -->
+
+                          </div>
+              </div>
+              <!-- /New Member -->
+      </div>
+  </section>
+
+<!-- /Login -->
+
+ <!-- chat -->
+ <% include ../partials/chat %>
+ <!-- /chat -->
+ 
+ <!-- Footer -->
+ <footer>
+     <!-- footer top -->
+     <section id="footer_top">
+             <div class="container">
+                 <div class="row">
+                 
+                     <!-- contact -->
+                     <% include ../partials/contact %>
+                     <!-- /contact -->
+ 
+                     <!-- shared -->
+                     <% include ../partials/shared %>
+                     <!-- /shared -->
+                     
+                     <!-- how to buy -->
+                     <% include ../partials/how-to-buy %>
+                     <!-- how to buy -->
+                 </div>
+             </div>
+     </section>
+     <!-- /footer top -->		
+ 
+   <!-- footer buttom -->
+     <section id="footer_buttom">
+         <% include ../partials/footer %>
+     </section>
+   <!-- /footer buttom -->
+ </footer>
+ <!-- /Footer -->
+ 
