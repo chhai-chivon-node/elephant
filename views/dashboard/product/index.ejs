@@ -13,7 +13,7 @@
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h4 class="page-header">Product</h4>
+                        <h4 class="page-header">Category</h4>
                     </div>
                 </div>
                 <!-- CONTENT -->
@@ -38,16 +38,28 @@
                                           </tr>
                                       </thead>
                                       <tbody>
-                                          <tr class="gradeC">
-                                              <td>Misc</td>
-                                              <td>PSP browser</td>
-                                              <td>PSP</td>
-                                              <td class="center">-</td>
-                                              <td>
-                                                    <a href="/dashboard/product/edit"><button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button></a>
-                                                    <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                              </td>
-                                          </tr>
+                                            <% products.forEach(function(product,index){ %>
+                                                <tr>
+                                                    <td><%= index + 1 %></td>
+                                                    <td><%=  product.name %></td>
+                                                    <td><%=  product.description %></td>
+                                                    <td><%=  product.createdAt %></td>
+                                                    <td>
+                                                        <ul class="list-inline">
+                                                            <li>
+                                                                <a href="/dashboard/product/edit/<%= product.id %>">
+                                                                    <input type="submit"  value="Update" class="btn btn-warning">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <form class="d-inline" action="/dashboard/product/delete/<%= product.id %>" method="post">
+                                                                    <input type="submit"  value="Delete" class="btn btn-danger">
+                                                                </form>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            <% }) %>
                                       </tbody>
                                   </table>
                                   <ul class="pagination pull-right">

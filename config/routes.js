@@ -63,32 +63,41 @@ module.exports.routes = {
 
   '/dashboard/index':{view:'dashboard/index'},
 
-  '/dashboard/category':{view:'dashboard/category/index'},
-  '/dashboard/category/new':{view:'dashboard/category/new'},
-  '/dashboard/category/edit':{view:'dashboard/category/edit'},
-
-  '/dashboard/product':{view:'dashboard/product/index'},
-  '/dashboard/product/new':{view:'dashboard/product/new'},
-  '/dashboard/product/edit':{view:'dashboard/product/edit'},
+  //Category
+  'get /dashboard/category': 'dashboard/CategoryController.index',
+  'get /dashboard/category/new': 'dashboard/CategoryController.new',
+  'get /dashboard/category/edit/:id': 'dashboard/CategoryController.edit',
+  'post /dashboard/category': 'dashboard/CategoryController.create',
+  'post /dashboard/category/update/:id': 'dashboard/CategoryController.update',
+  'post /dashboard/category/delete/:id': 'dashboard/CategoryController.delete',
+  //Product
+  'get /dashboard/product': 'dashboard/ProductController.index',
+  'get /dashboard/product/new': 'dashboard/ProductController.new',
+  'get /dashboard/product/edit/:id': 'dashboard/ProductController.edit',
+  'post /dashboard/product': 'dashboard/ProductController.create',
+  'post /dashboard/product/update/:id': 'dashboard/ProductController.update',
+  'post /dashboard/product/delete/:id': 'dashboard/ProductController.delete',
+  //Partner
+  'get /dashboard/partner': 'dashboard/PartnerController.index',
+  'get /dashboard/partner/new': 'dashboard/PartnerController.new',
+  'get /dashboard/partner/edit/:id': 'dashboard/PartnerController.edit',
+  'post /dashboard/partner': 'dashboard/PartnerController.create',
+  'post /dashboard/partner/update/:id': 'dashboard/PartnerController.update',
+  'post /dashboard/partner/delete/:id': 'dashboard/PartnerController.delete',
+   //Slide
+   'get /dashboard/slide': 'dashboard/SlideController.index',
+   'get /dashboard/slide/new': 'dashboard/SlideController.new',
+   'get /dashboard/slide/edit/:id': 'dashboard/SlideController.edit',
+   'post /dashboard/slide': 'dashboard/SlideController.create',
+   'post /dashboard/slide/update/:id': 'dashboard/SlideController.update',
+   'post /dashboard/slide/delete/:id': 'dashboard/SlideController.delete',
 
   '/dashboard/user':{view:'dashboard/user/index'},
   '/dashboard/user/new':{view:'dashboard/user/new'},
   '/dashboard/user/edit':{view:'dashboard/user/edit'},
 
-  '/dashboard/partner':{view:'dashboard/partner/index'},
-  '/dashboard/partner/new':{view:'dashboard/partner/new'},
-  '/dashboard/partner/edit':{view:'dashboard/partner/edit'},
-
-  '/dashboard/slide':{view:'dashboard/slide/index'},
-  '/dashboard/slide/new':{view:'dashboard/slide/new'},
-  '/dashboard/slide/edit':{view:'dashboard/slide/edit'},
-
   // Endpoints
   'post /login': 'UserController.login',
   'post /signup': 'UserController.signup',
   '/logout': 'UserController.logout',
-
-
-
-  'post /categories/create':'CategoryController.create'
 };

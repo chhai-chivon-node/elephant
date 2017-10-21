@@ -32,7 +32,7 @@
             </li>
             
           <% if (req.session.me) { %>
-            <li><a href="/profile"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Account</a></li>
+            <li><a href="/profile"><span class="glyphicon glyphicon-log-in"></span>&nbsp;<%= req.session.username %></a></li>
             <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Logout</a></li>
             <% } else { %>
             <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Login</a></li>

@@ -38,16 +38,28 @@
                                           </tr>
                                       </thead>
                                       <tbody>
-                                          <tr class="gradeC">
-                                              <td>Misc</td>
-                                              <td>PSP browser</td>
-                                              <td>PSP</td>
-                                              <td class="center">-</td>
-                                              <td>
-                                                    <a href="/dashboard/category/edit"><button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button></a>
-                                                    <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                              </td>
-                                          </tr>
+                                            <% categories.forEach(function(category,index){ %>
+                                                <tr>
+                                                    <td><%= index + 1 %></td>
+                                                    <td><%= category.name %></td>
+                                                    <td><%=  category.description %></td>
+                                                    <td><%=  category.createdAt %></td>
+                                                    <td>
+                                                        <ul class="list-inline">
+                                                            <li>
+                                                                <a href="/dashboard/category/edit/<%= category.id %>">
+                                                                    <input type="submit"  value="Update" class="btn btn-warning">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <form class="d-inline" action="/dashboard/category/delete/<%= category.id %>" method="post">
+                                                                    <input type="submit"  value="Delete" class="btn btn-danger">
+                                                                </form>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            <% }) %>
                                       </tbody>
                                   </table>
                                   <ul class="pagination pull-right">

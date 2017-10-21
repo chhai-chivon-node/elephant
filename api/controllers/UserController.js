@@ -11,7 +11,6 @@ module.exports = {
    * `UserController.login()`
    */
   login: function (req, res) {
-
     // See `api/responses/login.js`
     return res.login({
       email: req.param('email'),
@@ -47,7 +46,7 @@ module.exports = {
    * `UserController.signup()`
    */
   signup: function (req, res) {
-
+    
     // Attempt to signup a user using the provided parameters
     User.signup({
       name: req.param('name'),
@@ -63,6 +62,7 @@ module.exports = {
       // We do this by "remembering" the user in the session.
       // Subsequent requests from this user agent will have `req.session.me` set.
       req.session.me = user.id;
+      
 
       // If this is not an HTML-wanting browser, e.g. AJAX/sockets/cURL/etc.,
       // send a 200 response letting the user agent know the signup was successful.
@@ -81,7 +81,8 @@ module.exports = {
         if(err){
             res.send(500, {error: 'Database Error'});
         }
-        res.view('/dashboard/user/index', {users:users});
+        //res.view('/dashboard/user/index', {users:users});
+        return res.json(users);
     });
 },
 };
