@@ -3,20 +3,26 @@
         <div class="container">
             <div class="row">
                     <div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
-    
-                        <!-- catagory for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                <% categories.forEach(function(category,index){ %>
+                                <% if (categories) { %>
+                                    <% categories.forEach(function(category,index){ %>
+                                        <div class="col-xs-2 col-sm-2 col-md-2">
+                                            <a href="/">
+                                                <img src="images/category/<%= category.image %>"/>
+                                                <div class="slide-catagory-title">
+                                                    <%= category.name %>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    <% }) %>
+                                <% }else { %>    
                                     <div class="col-xs-2 col-sm-2 col-md-2">
-                                        <a href="/">
-                                            <img src="images/category/<%= category.image %>"/>
-                                            <div class="slide-catagory-title">
-                                                <%= category.name %>
-                                            </div>
-                                        </a>
+                                            <a href="/">
+                                                <img src="images/icon/loading_spinner.gif"/>
+                                            </a>
                                     </div>
-                                <% }) %>
+                                <% } %>
                             </div>
     
                             <!-- <div class="item">

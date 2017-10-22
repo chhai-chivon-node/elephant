@@ -10,6 +10,7 @@
         <!-- 	Item content1 -->
         <div class="item-content">
             <div class="row">    
+                    <% if(products){ %>
                     <% products.forEach(function(product,index){ %>
                         <div class="col-sm-3 col-md-2">
                             <div class="thumbnail">
@@ -50,7 +51,8 @@
                                 </div>               
                             </div>
                         </div>
-                    <% }) %>          
+                    <% }) %>  
+                    <% } %>          
         </div>
         <!-- /	Item content1 -->
         </div>

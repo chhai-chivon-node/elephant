@@ -1,40 +1,44 @@
 <!-- Slider -->
 <section id="slider">
-        <div class="container-fluid">
-            <div class="row">
-                        <div id="carousel-example-generic2" class="carousel slide" data-ride="carousel">
-                                <!-- Indicators -->
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carousel-example-generic2" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carousel-example-generic2" data-slide-to="1"></li>
-                                    <li data-target="#carousel-example-generic2" data-slide-to="2"></li>
-                                </ol>
-
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner" role="listbox">
+    <div class="container-fluid">
+        <div class="row">
+            <div id="carousel-example-generic2" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic2" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic2" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic2" data-slide-to="2"></li>
+                </ol>                              
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                        <% if (sliders) { %>
+                            <% sliders.forEach(function(slide,index){ %>
+                                <% if (index === 0) { %>
                                     <div class="item active">
-                                        <a href="">
-                                            <!-- <p>{{ slide.name }}</p> -->
-                                            <img src="/images/slide/s-1.jpg" alt="...">
-                                            </a>
-                                        </div>
+                                <% }else { %>  
                                     <div class="item">
-                                        <a href="">
-                                            <img src="/images/slide/s-2.jpg" alt="...">
-                                            </a>
+                                <% } %>    
+                                <a href="">
+                                    <!-- <p>{{ slide.name }}</p> -->
+                                    <img src="/images/slide/<%= slide.image %>" alt="...">
+                                    <div class="carousel-caption">
+                                            <h3><%= slide.name %></h3>
+                                            <p><%= slide.description %></p>
                                     </div>
-
-                                    <div class="item">
-                                        <a href="">
-                                            <img src="/images/slide/s-3.jpg" alt="...">
-                                            </a>
-                                    </div>
-                                    
-                                </div>
-
-                                <!-- Controls -->
+                                </a>
                             </div>
+                            <% }) %>
+                        <% }else { %>    
+                                <div class="col-xs-2 col-sm-2 col-md-2">
+                                        <a href="/">
+                                            <img src="images/icon/loading_spinner.gif"/>
+                                        </a>
+                                </div>
+                        <% } %>      
+                </div>
+                <!-- Controls -->
             </div>
         </div>
+    </div>    
 </section>
 <!-- /Slider -->
