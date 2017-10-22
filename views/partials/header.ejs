@@ -32,8 +32,12 @@
             </li>
             
           <% if (req.session.me) { %>
-            <li><a href="/profile"><span class="glyphicon glyphicon-log-in"></span>&nbsp;<%= req.session.username %></a></li>
-            <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Logout</a></li>
+              <% if (req.session.user.name == 'admin') {%>
+                <li><a href="/dashboard/index"><span class="glyphicon glyphicon-log-in"></span>&nbsp;<%= req.session.user.name %></a></li>
+              <% } else { %>
+                <li><a href="/account"><span class="glyphicon glyphicon-log-in"></span>&nbsp;<%= req.session.user.name %></a></li>
+              <% } %>
+              <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Logout</a></li>
             <% } else { %>
             <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Login</a></li>
             <li><a href="/signup"><span class="glyphicon glyphicon-user"></span>&nbsp; Register</a></li>

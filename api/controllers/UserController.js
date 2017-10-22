@@ -38,7 +38,7 @@ module.exports = {
     }
 
     // Otherwise if this is an HTML-wanting browser, do a redirect.
-    return res.redirect('/');
+    return res.redirect('/login');
   },
 
 
@@ -71,7 +71,7 @@ module.exports = {
       }
 
       // Otherwise if this is an HTML-wanting browser, redirect to /welcome.
-      return res.redirect('/');
+      return res.redirect('/index');
     });
   },
 
