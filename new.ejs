@@ -13,7 +13,7 @@
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h4 class="page-header">Product</h4>
+                        <h4 class="page-header">Slide</h4>
                     </div>
                 </div>
                 <!-- CONTENT -->
@@ -22,41 +22,17 @@
                   <div class="col-lg-12">
                       <div class="panel panel-default">
                           <div class="panel-heading">
-                                Add Product
+                                Add Slide
                           </div>
                           <!-- /.panel-heading -->
                           <div class="panel-body">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <form role="form" action="/dashboard/product" method="post" enctype="multipart/form-data">
+                                        <form role="form" action="/dashboard/slide" method="post" enctype="multipart/form-data">
                                             <div class="form-group">
-                                                <label>Product Name:</label>
-                                                <input class="form-control" name="name" placeholder="Enter product name">
+                                                <label>Slide Name:</label>
+                                                <input class="form-control" name="name" placeholder="Enter slide name">
                                                 <!-- <p class="help-block">Example block-level help text here.</p> -->
-                                            </div>
-											<div class="form-group">
-													<label>Choose Category:</label>
-													<select class="form-control" name="categoryId">
-                                                        <% categories.forEach(function(category){ %>
-                                                            <option value="<%= category.id %>"><%= category.name %></option>
-                                                        <% }) %>
-													</select>
-                                            </div>
-                                            <div class="form-group">
-                                                    <label>Price:</label>
-                                                    <input class="form-control" name="price" placeholder="Enter price">
-                                                    <!-- <p class="help-block">Example block-level help text here.</p> -->
-                                            </div>
-                                            <div class="form-group">
-													<label>Type:</label>
-													<select class="form-control" name="type">
-                                                        <option value="case">Case</option>
-                                                        <option value="kg">Kg</option>
-													</select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="radio-inline"><input type="radio" name="stock" value="In Stock">In Stock</label>
-                                                <label class="radio-inline"><input type="radio" name="stock" value="Out Stock">Out Stock</label>
                                             </div>
 											<div class="form-group">
                                                 <label>Description:</label>
@@ -64,7 +40,7 @@
 											</div>
                                             <div class="form-group">
                                                 <label>Image:</label>
-                                                <input type="file" name="fileUpload">
+                                                <input type="file" name="image">
 											</div>
 											<div class="col-md-offset-5 col-md-5">
                                                 <input type="submit" value="Submit" class="btn btn-success">

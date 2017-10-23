@@ -93,6 +93,20 @@ module.exports.routes = {
    'post /dashboard/slide': 'dashboard/SlideController.create',
    'post /dashboard/slide/update/:id': 'dashboard/SlideController.update',
    'post /dashboard/slide/delete/:id': 'dashboard/SlideController.delete',
+      //Slide
+   'get /dashboard/slide': 'dashboard/SlideController.index',
+   'get /dashboard/slide/new': 'dashboard/SlideController.new',
+   'get /dashboard/slide/edit/:id': 'dashboard/SlideController.edit',
+   'post /dashboard/slide': 'dashboard/SlideController.create',
+   'post /dashboard/slide/update/:id': 'dashboard/SlideController.update',
+   'post /dashboard/slide/delete/:id': 'dashboard/SlideController.delete',
+   //Role
+   'get /dashboard/role': 'dashboard/RoleController.index',
+   'get /dashboard/role/new': 'dashboard/RoleController.new',
+   'get /dashboard/role/edit/:id': 'dashboard/RoleController.edit',
+   'post /dashboard/role': 'dashboard/RoleController.create',
+   'post /dashboard/role/update/:id': 'dashboard/RoleController.update',
+   'post /dashboard/role/delete/:id': 'dashboard/RoleController.delete',   
 
   '/dashboard/user':{view:'dashboard/user/index'},
   '/dashboard/user/new':{view:'dashboard/user/new'},

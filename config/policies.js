@@ -25,6 +25,53 @@ module.exports.policies = {
     '*': 'isAuthenticated',
     login: true,
     signup: true
+  },
+  CategoryController: {
+    '*': 'isAuthenticated',
+    index: true,
+    'new': true,
+    create:true,
+    delete:true,
+    edit:true,
+    update:true
+  },
+  ProductController: {
+    '*': 'isAuthenticated',
+    index: true,
+    'new': true,
+    create:true,
+    delete:true,
+    edit:true,
+    update:true
+  },
+  RoleController: {
+    '*': 'isAuthenticated',
+    index: true,
+    'new': true,
+    create:true,
+    delete:true,
+    edit:true,
+    update:true
+  },
+  SlideController: {
+    '*': 'isAuthenticated',
+    index: true,
+    'new': true,
+    create:true,
+    delete:true,
+    edit:true,
+    update:true
+  },
+  PartnerController: {
+    '*': 'isAuthenticated',
+    index: true,
+    'new': true,
+    create:true,
+    delete:true,
+    edit:true,
+    update:true
   }
+  
+
 
 };

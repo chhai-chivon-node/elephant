@@ -13,7 +13,7 @@
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h4 class="page-header">Category</h4>
+                        <h4 class="page-header">Slide</h4>
                     </div>
                 </div>
                 <!-- CONTENT -->
@@ -22,7 +22,7 @@
                   <div class="col-lg-12">
                       <div class="panel panel-default">
                           <div class="panel-heading">
-                                <a href="/dashboard/product/new"><button type="button" class="btn btn-success" ><i class="fa fa-plus" aria-hidden="true"></i></button></a>
+                                <a href="/dashboard/slide/new"><button type="button" class="btn btn-success" ><i class="fa fa-plus" aria-hidden="true"></i></button></a>
                           </div>
                           <!-- /.panel-heading -->
                           <div class="panel-body">
@@ -32,31 +32,27 @@
                                           <tr>
                                               <th>No</th>
                                               <th>NAME</th>
-                                              <th>PRICE</th>
-                                              <th>TYPE</th>
-                                              <th>STOCK</th>
                                               <th>DESCRIPTION</th>
+                                              <th>CREATE DATE</th>
                                               <th>ACTION</th>
                                           </tr>
                                       </thead>
                                       <tbody>
-                                            <% products.forEach(function(product,index){ %>
+                                            <% slides.forEach(function(slide,index){ %>
                                                 <tr>
                                                     <td><%= index + 1 %></td>
-                                                    <td><%=  product.name %></td>
-                                                    <td><%=  product.price %></td>
-                                                    <td><%=  product.type %></td>
-                                                    <td><%=  product.stock %></td>
-                                                    <td><%=  product.description %></td>
+                                                    <td><%=  slide.name %></td>
+                                                    <td><%=  slide.description %></td>
+                                                    <td><%=  slide.createdAt %></td>
                                                     <td>
                                                         <ul class="list-inline">
                                                             <li>
-                                                                <a href="/dashboard/product/edit/<%= product.id %>">
+                                                                <a href="/dashboard/slide/edit/<%= slide.id %>">
                                                                     <input type="submit"  value="Update" class="btn btn-warning">
                                                                 </a>
                                                             </li>
                                                             <li>
-                                                                <form class="d-inline" action="/dashboard/product/delete/<%= product.id %>" method="post">
+                                                                <form class="d-inline" action="/dashboard/slide/delete/<%= slide.id %>" method="post">
                                                                     <input type="submit"  value="Delete" class="btn btn-danger">
                                                                 </form>
                                                             </li>

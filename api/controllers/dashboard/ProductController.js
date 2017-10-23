@@ -33,10 +33,16 @@ module.exports = {
                 // save original file name
                 var name = req.body.name;
                 var description = req.body.description;
+                var price = req.body.price;
+                var type = req.body.type;
+                var stock = req.body.stock;
                 var categoryId = req.body.categoryId;
                 var product = {
-                    name: name,
+                    name:name,
                     categoryId:categoryId,
+                    price:price,
+                    type:type,
+                    stock:stock,
                     description:description,
                     image:lastPart
                 }
@@ -77,10 +83,21 @@ module.exports = {
     },
     update: function(req, res){
         var name = req.body.name;
+        var price = req.body.price;
+        var type = req.body.type;
+        var stock = req.body.stock;
         var description = req.body.description;
         var categoryId = req.body.categoryId;
-
-        Product.update({id: req.params.id},{name:name,description:description,categoryId:categoryId}).exec(function(err){
+        var product = {
+            name:name,
+            categoryId:categoryId,
+            price:price,
+            type:type,
+            stock:stock,
+            description:description,
+            image:lastPart
+        }
+        Product.update({id: req.params.id},product).exec(function(err){
             if(err){
                 res.send(500, {error: 'Database Error'});
             }
