@@ -25,7 +25,10 @@ module.exports = {
     },
     
 	index:function(req, res){
-        Category.find({}).exec(function(err, categories){
+        var page = req.params.page;
+        var limit = 10;
+        var offset = (page - 1) *  limit;
+        Category.find({}).paginate({page: page, limit: offset}).exec(function(err, categories){
             if(err){
                 res.send(500, {error: 'Database Error'});
             }

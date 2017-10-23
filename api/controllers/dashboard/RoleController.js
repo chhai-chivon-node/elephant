@@ -7,7 +7,10 @@
 
 module.exports = {
 	index:function(req, res){
-        Role.find({}).exec(function(err, roles){
+        var page = req.params.page;
+        var limit = 10;
+        var offset = (page - 1) *  limit;
+        Role.find({}).paginate({page: page, limit: offset}).exec(function(err, roles){
             if(err){
                 res.send(500, {error: 'Database Error'});
             }
