@@ -87,7 +87,12 @@ module.exports = {
       });
   },
   'new': function(req, res){
-    res.view();
+    Role.find({}).exec(function(err, roles){
+      if(err){
+          res.send(500, {error: 'Database Error'});
+      }
+      res.view({roles:roles});
+ });
 },
 
 create:function(req, res){
@@ -115,7 +120,7 @@ create:function(req, res){
     }
 
     // Otherwise if this is an HTML-wanting browser, redirect to /welcome.
-    res.redirect('/dashboard/user');
+    res.redirect('/dashboard/user/list/1');
   });
 },
 
@@ -125,7 +130,7 @@ delete: function(req, res){
         if(err){
             res.send(500, {error: 'Database Error'});
         }
-        res.redirect('/dashboard/user');
+        res.redirect('/dashboard/user/list/1');
     });
     return false;
 },
@@ -145,7 +150,7 @@ update: function(req, res){
         if(err){
             res.send(500, {error: 'Database Error'});
         }
-        res.redirect('/dashboard/user');
+        res.redirect('/dashboard/user/list/1');
     });
   return false;
 }

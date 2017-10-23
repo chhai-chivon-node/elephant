@@ -32,27 +32,44 @@
                                           <tr>
                                               <th>No</th>
                                               <th>NAME</th>
-                                              <th>DESCRIPTION</th>
+                                              <th>EMAIL</th>
+                                              <th>ROLE</th>
                                               <th>CREATE DATE</th>
                                               <th>ACTION</th>
                                           </tr>
                                       </thead>
                                       <tbody>
-                                            <% users.forEach(function(user){ %>
+                                            <% if (users) { %>
+                                            <% users.forEach(function(user,index){ %>
                                                 <tr>
-                                                    <td><%= user.id %></td>
+                                                    <td><%= index + 1 %></td>
+                                                    <td><%=  user.name %></td>
+                                                    <td><%=  user.email %></td>
+                                                    <td>ROLE</td>
+                                                    <td><%=  user.createdAt %></td>
+                                                    <td>
+                                                        <ul class="list-inline">
+                                                            <li>
+                                                                <a href="/dashboard/user/edit/<%= user.id %>">
+                                                                    <input type="submit"  value="Update" class="btn btn-warning">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <form class="d-inline" action="/dashboard/user/delete/<%= user.id %>" method="post">
+                                                                    <input type="submit"  value="Disable" class="btn btn-danger">
+                                                                </form>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
                                                 </tr>
                                             <% }) %>
-                                          <tr class="gradeC">
-                                              <td>Misc</td>
-                                              <td>PSP browser</td>
-                                              <td>PSP</td>
-                                              <td class="center">-</td>
-                                              <td>
-                                                    <a href="/dashboard/user/edit"><button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button></a>
-                                                    <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                              </td>
-                                          </tr>
+                                            <% }else { %>    
+                                                <div class="col-xs-2 col-sm-2 col-md-2">
+                                                        <a href="/">
+                                                            <img src="images/icon/loading_spinner.gif"/>
+                                                        </a>
+                                                </div>
+                                            <% } %>
                                       </tbody>
                                   </table>
                                   <ul class="pagination pull-right">

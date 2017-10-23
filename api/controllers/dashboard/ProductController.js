@@ -53,7 +53,7 @@ module.exports = {
                     if(err){
                         res.send(500, {error: 'Database Error'});
                     }
-                    res.redirect('/dashboard/product');
+                    res.redirect('/dashboard/product/list/1');
                 });
         });
         
@@ -65,7 +65,7 @@ module.exports = {
             if(err){
                 res.send(500, {error: 'Database Error'});
             }
-            res.redirect('/dashboard/product');
+            res.redirect('/dashboard/product/list/1');
         });
         return false;
     },
@@ -104,7 +104,7 @@ module.exports = {
             if(err){
                 res.send(500, {error: 'Database Error'});
             }
-            res.redirect('/dashboard/product');
+            res.redirect('/dashboard/product/list/1');
         });
 
         return false;

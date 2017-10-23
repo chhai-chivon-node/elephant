@@ -101,6 +101,14 @@ module.exports.routes = {
    'post /dashboard/role/update/:id': 'dashboard/RoleController.update',
    'post /dashboard/role/delete/:id': 'dashboard/RoleController.delete',   
 
+   //User
+   'get /dashboard/user/list/:page': 'dashboard/UserController.index',
+   'get /dashboard/user/new': 'dashboard/UserController.new',
+   'get /dashboard/user/edit/:id': 'dashboard/UserController.edit',
+   'post /dashboard/user': 'dashboard/UserController.create',
+   'post /dashboard/user/update/:id': 'dashboard/UserController.update',
+   'post /dashboard/user/delete/:id': 'dashboard/UserController.delete',   
+
   '/dashboard/user':{view:'dashboard/user/index'},
   '/dashboard/user/new':{view:'dashboard/user/new'},
   '/dashboard/user/edit':{view:'dashboard/user/edit'},

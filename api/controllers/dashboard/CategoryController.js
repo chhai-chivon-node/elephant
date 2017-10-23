@@ -68,7 +68,7 @@ module.exports = {
                 if(err){
                     res.send(500, {error: 'Database Error'});
                 }
-                res.redirect('/dashboard/category');
+                res.redirect('/dashboard/category/list/1');
             });
         });
     },
@@ -79,7 +79,7 @@ module.exports = {
             if(err){
                 res.send(500, {error: 'Database Error'});
             }
-            res.redirect('/dashboard/category');
+            res.redirect('/dashboard/category/list/1');
         });
         return false;
     },
@@ -107,7 +107,7 @@ module.exports = {
             if(err){
                 res.send(500, {error: 'Database Error'});
             }
-            res.redirect('/dashboard/category');
+            res.redirect('/dashboard/category/list/1');
         });
 
         return false;
