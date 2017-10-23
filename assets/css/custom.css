@@ -14,7 +14,7 @@ body{
 }
 
 .navbar-default{
-	padding-bottom: 7px;
+	padding-bottom: 0px;
 }
 
 .secound-nav{
@@ -390,11 +390,10 @@ body{
 	width: 350px;
 	padding: 10px 35px 10px 35px;
 	background: #FAFAFA;
-	font-size: 19px;
+	font-size: 24px;
 	font-weight: 700;
 	color: #34495e;
 	letter-spacing: 4px;
-	font-weight: bold;
 }
 
 #new-product .title h2{

@@ -1,3 +1,25 @@
+<style>
+        .pagination {
+            display: inline-block;
+        }
+        
+        .pagination a {
+            color: black;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+        
+        .pagination a.active {
+            background-color: rgb(22, 224, 29);
+            color: rgb(236, 18, 18);
+            border-radius: 5px;
+        }
+        
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+</style>
 <!-- 	New Product -->
 <section id="new-product">
         <div class="container-fluid">
@@ -56,7 +78,23 @@
             <% } %>
              <!-- /item-1 -->    
             </div>
-            <!-- end row -->           
+            <!-- end row -->
+            <div class="row">
+                <div class="col-ms-12 col-md-12">
+                        <div class="text-center">
+                                <ul class="pagination">
+                                        <a href="#">Prev</a>
+                                        <a href="#">1</a>
+                                        <a href="#">2</a>
+                                        <a href="#">3</a>
+                                        <a href="#">4</a>
+                                        <a href="#">5</a>
+                                        <a href="#">6</a>
+                                        <a href="#">Next</a>
+                                </ul>
+                        </div>
+                </div>
+            </div>           
         </div>
         <!-- /	Item content1 -->
         </div>
