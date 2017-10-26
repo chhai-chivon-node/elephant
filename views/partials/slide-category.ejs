@@ -8,7 +8,7 @@
                                 <% if (categories) { %>
                                     <% categories.forEach(function(category,index){ %>
                                         <div class="col-xs-2 col-sm-2 col-md-2">
-                                            <a href="/">
+                                            <a href="/category/<%= category.id %>/1">
                                                 <img src="images/category/<%= category.image %>"/>
                                                 <div class="slide-catagory-title">
                                                     <%= category.name %>

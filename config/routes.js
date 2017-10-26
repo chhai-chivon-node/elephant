@@ -10,6 +10,7 @@ module.exports.routes = {
   // },
   
   '/': 'PagesController.index',
+  '/category/:id/:page':'PagesController.category',
 
   // '/login':{
   //   view:'pages/login'
@@ -57,10 +58,6 @@ module.exports.routes = {
   '/order-info':{
     view:'pages/order-info'
   },
-
-
-
-
 
 
   '/dashboard/index':{view:'dashboard/index'},

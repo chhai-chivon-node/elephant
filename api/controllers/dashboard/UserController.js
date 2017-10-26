@@ -141,7 +141,12 @@ edit: function(req, res) {
         if (err) {
             res.send(500, { error: 'Database Error' });
         }
-        res.view({user,user});
+        Role.find({}).exec(function(err, roles){
+          if(err){
+              res.send(500, {error: 'Database Error'});
+          }
+          res.view({user,user,roles:roles});
+        });
     });
 },
 update: function(req, res){

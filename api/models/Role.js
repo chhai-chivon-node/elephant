@@ -13,6 +13,10 @@ module.exports = {
     },
     description:{
       type:'string'
+    },
+     // Add a reference to User
+     role: {
+      model: 'user'
     }
   }
 };

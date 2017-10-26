@@ -15,6 +15,12 @@ module.exports = {
     password: {
       type: 'string',
       required: true
+    },
+
+    // Add a reference to Role
+    roles: {
+      collection: 'role',
+      via: 'role'
     }
   },
 
